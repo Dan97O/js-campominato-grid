@@ -22,8 +22,8 @@ Ogni cella ha un numero progressivo, da 1 a 100.
 Ci saranno quindi 10 caselle per ognuna delle 10 righe.
 Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata. */
 
-
-/* const easyById = document.getElementById("difficulty");
+/* 
+const easyById = document.getElementById("difficulty");
 const easySelect = easyById.selectedIndex;
 const easyValue = easyById.options[0];
 const easyNumber = easyValue.value;
@@ -43,8 +43,17 @@ const hardText = hardValue.text;
 
 console.log(easyNumber, easyText, 'prova');
 console.log(mediumNumber, mediumText, 'prova');
-console.log(easyNumber, easyText, 'prova');
- */
+console.log(easyNumber, easyText, 'prova'); 
+
+if (easyNumber) {
+  console.log(easyNumber);
+} else if (mediumNumber){
+  console.log(mediumNumber);
+
+}else if (hardNumber) {
+  console.log(hardNumber);
+}
+  */
 
 
 // L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
@@ -56,7 +65,7 @@ document.getElementById('generate_grid').addEventListener('click', function () {
 
   // Creo una variabile dove salvo il container delle 100 celle (container-grid)
   const container = document.querySelector("main .container");
-
+  container.innerHTML = '';
   // creo un max numero di celle
   let nMax = 100;
 
