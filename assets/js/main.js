@@ -26,47 +26,48 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 
 
 // L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
-document.getElementById('generate_grid').addEventListener('click', function(){
+document.getElementById('generate_grid').addEventListener('click', function () {
 
-/* Creare una griglia 10x10
- Ogni volta che clicco su un quadrato si colora di verde */
+  /* Creare una griglia 10x10
+   Ogni volta che clicco su un quadrato si colora di azzurro */
 
-// Creo una variabile dove salvo il container delle 100 celle (container-grid)
+  // Creo una variabile dove salvo il container delle 100 celle (container-grid)
+  const container = document.querySelector("main .container");
 
-const container = document.querySelector(".container");
+  // creo un max numero di celle
+  let nMax = 100;
 
-// creo un max numero di celle
+  // creo un ciclo n volte per le celle (dove n in questo caso sta per 100)
+  for (let i = 0; i < nMax; i++) {
+    const numCell = Number(i + 1);
+    //console.log(numCell);
+    const cell = `<div class="cell d-flex align-items-center justify-content-center">${numCell}</div>`;
+    container.innerHTML += cell;
 
-let nMax = 100;
+  }
 
-// creo un ciclo n volte per le celle (dove n in questo caso sta per 64)
-
-for (let i = 0; i < nMax; i++) {
-  const numCell = Number(i + 1)
-  console.log(numCell);
-  const cell = `<div class="cell d-flex align-items-center justify-content-center">${numCell}</div>`;
-  container.innerHTML += cell;
-}
-
-// seleziono una cella che ha classe cell e active
-
-const cellEl = document.querySelectorAll(".cell")
-
-// aggiungo eventlisner per la classe active ciclando per la lunghezza dell'array cellEl
+  // seleziono una cella che ha classe cell 
+  const cellEl = document.querySelectorAll(".cell")
 
 
-for (let i = 0; i < cellEl.length; i++) {
+  // aggiungo eventlisner per la classe active ciclando per la lunghezza dell'array cellEl
+  for (let i = 0; i < cellEl.length; i++) {
     const thisCell = cellEl[i];
     console.log(thisCell)
-    thisCell.addEventListener("click", function() {
-        thisCell.classList.toggle("bg_azure")
-        // this.classList.add("active")
-        console.log("Changed the color")
+
+    thisCell.addEventListener("click", function () {
+      
+      //creo costante per stampare il numero della cella cliccata in console
+      const numberCell = Number(i + 1);
+
+      // cambio colore ogni volta che clicco sulla cella
+      thisCell.classList.toggle("bg_azure")
+      console.log("Changed the color")
+      
+      //creo costante per stampare il numero della cella cliccata in console
+      console.log(numberCell);
     })
-    
-}
-
-
+  }
 })
 
 
