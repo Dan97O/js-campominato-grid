@@ -25,6 +25,9 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 
 
 
+// L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
+document.getElementById('generate_grid').addEventListener('click', function(){
+
 /* Creare una griglia 10x10
  Ogni volta che clicco su un quadrato si colora di verde */
 
@@ -60,7 +63,14 @@ for (let i = 0; i < cellEl.length; i++) {
         // this.classList.add("active")
         console.log("Changed the color")
     })
-
-
     
 }
+
+
+})
+
+
+
+
+
+
