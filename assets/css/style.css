@@ -34,6 +34,7 @@ main{background-color: #7fffd4;}
 }
 
 .play button{
-  padding: 1px 10px;
+  padding: 1px 20px;
   border: none;
+  border-radius: 10px;
 }
