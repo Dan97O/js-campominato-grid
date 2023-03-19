@@ -6,9 +6,10 @@
 
 .container{
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
   width: 80%;
   margin: auto;
+  padding: 3rem;
 }
 
 .cell{
@@ -16,6 +17,7 @@
   border: 1px solid black;
   aspect-ratio: 1/1;
   background-color: white;
+  border-radius: 3px;
 }
 
 .bg_azure{
@@ -38,3 +40,4 @@ main{background-color: #7fffd4;}
   border: none;
   border-radius: 10px;
 }
+
