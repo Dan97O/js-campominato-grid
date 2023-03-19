@@ -22,55 +22,28 @@ Ogni cella ha un numero progressivo, da 1 a 100.
 Ci saranno quindi 10 caselle per ognuna delle 10 righe.
 Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata. */
 
-/* 
-const easyById = document.getElementById("difficulty");
-const easySelect = easyById.selectedIndex;
-const easyValue = easyById.options[0];
-const easyNumber = easyValue.value;
-const easyText = easyValue.text;
-
-const mediumById = document.getElementById("difficulty");
-const mediumSelect = mediumById.selectedIndex;
-const mediumValue = mediumById.options[1];
-const mediumNumber = mediumValue.value;
-const mediumText = mediumValue.text;
-
-const hardById = document.getElementById("difficulty");
-const hardSelect = hardById.selectedIndex;
-const hardValue = hardById.options[2];
-const hardNumber = hardValue.value;
-const hardText = hardValue.text;
-
-console.log(easyNumber, easyText, 'prova');
-console.log(mediumNumber, mediumText, 'prova');
-console.log(easyNumber, easyText, 'prova'); 
-
-if (easyNumber) {
-  console.log(easyNumber);
-} else if (mediumNumber){
-  console.log(mediumNumber);
-
-}else if (hardNumber) {
-  console.log(hardNumber);
-}
-  */
-
+const selectEl = document.getElementById("difficulty");
+let numCells;
 
 // L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
 document.getElementById('generate_grid').addEventListener('click', function () {
 
 
-  /* Creare una griglia 10x10
+  /* Creare una griglia in base alla scelta dell'utente: facile/medio/difficile
    Ogni volta che clicco su un quadrato si colora di azzurro */
 
-  // Creo una variabile dove salvo il container delle 100 celle (container-grid)
+  // Creo una variabile dove salvo il container delle n celle (container-grid)
   const container = document.querySelector("main .container");
   container.innerHTML = '';
+  
   // creo un max numero di celle
-  let nMax = 100;
+  //+ bonus
+  numCells = Number(selectEl.value);
+  console.log(numCells);
 
-  // creo un ciclo n volte per le celle (dove n in questo caso sta per 100)
-  for (let i = 0; i < nMax; i++) {
+
+  // creo un ciclo n volte per le celle
+  for (let i = 0; i < numCells; i++) {
     const numCell = Number(i + 1);
     //console.log(numCell);
     const cell = `<div class="cell d-flex align-items-center justify-content-center">${numCell}</div>`;
